@@ -43,6 +43,13 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
+  it('continueGuardClause does not console.log within the if statement', () => {
+    const textContent = continueGuardClause.toString();
+
+    expect(textContent).not.toMatch(/if\s*\(.*\)\s*\{\s*console\.log/);
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
   it('continueGuardClause - it logs from 1 (inclusive) to 5 (exclusive) by 1, skipping 2 and 3', () => {
     continueGuardClause();
 
